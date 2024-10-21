@@ -1,11 +1,28 @@
 # Flutter: MVVM(Model-View-ViewModel) Architecture Learning Series
 
 
-## Getting Started
-- Creating the different folder needed to achieve mvvm architecture
-- handling different exception like *Bad Request Exception , FetchDataException, UnauthorizedException, InvalidInputException*
-- Handling api response like completed, loading and error 
-- GetApi and PostApi are declared in abstract class named BaseApiService , defined in NetworkApiService class to fetch data  from server and post data in server accordingly and handling different status error like 404, 400.
-- Different approaches like toast, flushbar, snakbar are defined in utils and implemented in login_screen
+
+
+## 🛠️ Features
+
+- **Structured Folder Organization:** Organized project folders according to MVVM principles.
+- **Exception Handling:** Implemented handling for various exceptions:
+    - Bad Request Exception
+    - Fetch Data Exception
+    - Unauthorized Exception
+    - Invalid Input Exception
+- **API Response Management:** Managed different API response states:
+    - Loading
+    - Completed
+    - Error
+- **Base API Service:** Created `BaseApiService` to streamline GET and POST requests with error handling for status codes like 404 and 400.
+- **Error Notifications:** Developed methods in a Utils class to display errors in the login screen.
+
+## 📚 Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/flutter-mvvm-example.git
+
 
 

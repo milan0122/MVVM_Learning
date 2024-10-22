@@ -4,6 +4,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
 class Utils{
 
+  //uses for Input Focus (eg. when you click done in one input field it goes to another one)
+  static void FieldFocusChange(BuildContext context, FocusNode current, FocusNode next){
+    current.unfocus();
+    FocusScope.of(context).requestFocus(next);
+
+}
+//use for show error like internet connection
   static toastMessage(String message){
     Fluttertoast.showToast(
         msg:message,
@@ -13,7 +20,7 @@ class Utils{
     );
   }
 
-
+  //use for show error like internet connection
   static void flushBarErrorMessage(String message, BuildContext context){
     showFlushbar(context: context,
         flushbar:Flushbar(
@@ -29,7 +36,7 @@ class Utils{
           title: 'Error',
           message: message,)..show(context) );
   }
-
+  //use for show error like internet connection
   static snakBar(String message,BuildContext context){
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

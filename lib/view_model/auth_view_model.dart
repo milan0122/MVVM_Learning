@@ -42,4 +42,30 @@ class AuthViewModel with ChangeNotifier{
 
    });
   }
+
+  Future<void> signUpApi(dynamic data, BuildContext context)async{
+    setLoading(true);//until api hits
+    _myRepo.signUpApi(data).then((value){
+      setLoading(false);//after api hits
+
+      Utils.flushBarErrorMessage('Register Successfully', context);
+      Navigator.pushNamed(context, RouteName.login);
+
+
+      if(kDebugMode){
+
+        print(value.toString());
+      }
+
+
+    }).onError((error,stackTrace){
+      setLoading(false);//after api errors
+
+      if(kDebugMode){
+        Utils.toastMessage(error.toString());
+        print(error.toString());
+      }
+
+    });
+  }
 }

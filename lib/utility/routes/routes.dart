@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mvvm_learnig/utility/routes/routes_name.dart';
 import 'package:mvvm_learnig/view/home_screen.dart';
 import 'package:mvvm_learnig/view/login_screen.dart';
+import 'package:mvvm_learnig/view/signup.dart';
 class Routes{
 
   static Route<dynamic> generateRoute(RouteSettings settings){
@@ -11,6 +12,8 @@ class Routes{
         return MaterialPageRoute(builder: (_)=>HomeScreen());
       case RouteName.login:
         return MaterialPageRoute(builder: (_)=>LoginScreen());
+      case RouteName.signUP:
+        return MaterialPageRoute(builder: (_)=>SignUpScreen());
       default:
         return MaterialPageRoute(builder: (_){
           return Scaffold(

@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mvvm_learnig/res/components/round_button.dart';
 import 'package:mvvm_learnig/utility/utils.dart';
 import 'package:mvvm_learnig/view_model/auth_view_model.dart';
 import 'package:provider/provider.dart';
+import 'package:mvvm_learnig/view/signup.dart';
 
 import '../utility/routes/routes_name.dart';
 class LoginScreen extends StatefulWidget {
@@ -103,6 +105,24 @@ class _LoginScreenState extends State<LoginScreen> {
 
               }
             } ),
+            SizedBox(height: height*0.08,),
+            Text.rich(TextSpan(
+              text: 'Don\'t have your Account? ',
+              style: TextStyle(fontSize: 20),
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'Sign Up',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                      fontSize: 20),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.pushNamed(context, RouteName.signUP);
+                    },
+                )
+              ],
+            ))
           ],
         ),
       )

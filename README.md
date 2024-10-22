@@ -20,10 +20,28 @@
 - **2nd work**
 - **Authentication and component:** Round button component is created and a simple authentication is applied on login button.
 - **Login and Signup using API:**  successfully login and signup when api hits with the help of fake api and handle regarding exceptions
+- **User Token Model**: Handles user tokens for authentication.
+- **Splash Screen**: Checks for a user token saved in Shared Preferences and redirects users accordingly.
+  - Redirects to the home screen if the token exists.
+  - Directs to the login screen if the token is null.
 
 
 
 ## 📚 Getting Started
 
+### Prerequisites
 
+- Flutter SDK
+- Dart
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/milan0122/MVVM_Learning.git
+   
+2. Install the dependencies:
+   $ flutter pub get
+3. Run the app:
+   $ flutter run 
 

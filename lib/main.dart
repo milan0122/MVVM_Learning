@@ -4,6 +4,7 @@ import 'package:mvvm_learnig/utility/routes/routes_name.dart';
 import 'package:mvvm_learnig/view/home_screen.dart';
 import 'package:mvvm_learnig/view/login_screen.dart';
 import 'package:mvvm_learnig/view_model/auth_view_model.dart';
+import 'package:mvvm_learnig/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_)=>AuthViewModel())
+          ChangeNotifierProvider(create: (_)=>AuthViewModel()),
+          ChangeNotifierProvider(create: (_)=>UserViewModel())
 
     ],
       child: Builder(builder: (BuildContext context){
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
                     color: Colors.deepOrangeAccent
                 )
             ),
-            initialRoute: RouteName.login,
+            initialRoute: RouteName.splash,
             onGenerateRoute: Routes.generateRoute
         );
 

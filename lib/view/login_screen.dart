@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_learnig/res/components/round_button.dart';
 import 'package:mvvm_learnig/utility/utils.dart';
+import 'package:mvvm_learnig/view_model/auth_view_model.dart';
+import 'package:provider/provider.dart';
 
 import '../utility/routes/routes_name.dart';
 class LoginScreen extends StatefulWidget {
@@ -27,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height * 1;
+    final authViewModel = Provider.of<AuthViewModel>(context);
     return Scaffold(
         appBar: AppBar(
           title: const Text('MVVM Learning'),
@@ -75,7 +78,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
            SizedBox(height: height * .09,),
-            RoundButton(title: 'Login', onPress:(){
+            RoundButton(
+                title: 'Login',
+                loading: authViewModel.loading,
+                onPress:(){
               if(emailController.text.isEmpty){
                 Utils.toastMessage('Please enter email ');
               }
@@ -88,7 +94,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
               }
               else{
-               print("login success");
+                Map data = {
+                  'email': emailController.text.toString(),
+                  'password': passwordController.text.toString()
+                };
+               authViewModel.loginApi(data,context);
+
 
               }
             } ),

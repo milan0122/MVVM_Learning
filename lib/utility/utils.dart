@@ -33,7 +33,6 @@ class Utils{
           positionOffset: 20,
           icon: Icon(Icons.error,size: 20,color: Colors.white,),
           duration: Duration(seconds: 5),
-          title: 'Error',
           message: message,)..show(context) );
   }
   //use for show error like internet connection

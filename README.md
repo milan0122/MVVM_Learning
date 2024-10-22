@@ -17,7 +17,10 @@
     - Error
 - **Base API Service:** Created `BaseApiService` to streamline GET and POST requests with error handling for status codes like 404 and 400.
 - **Error Notifications:** Developed methods in a Utils class to display errors in the login screen.
+- **2nd work**
 - **Authentication and component:** Round button component is created and a simple authentication is applied on login button.
+- **API and View Model implementation:**  successfully login when api hits with the help of fake api and handle regarding exceptions
+
 
 ## 📚 Getting Started
 

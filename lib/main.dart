@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
             theme: ThemeData(
                 appBarTheme: AppBarTheme(
-                    color: Colors.deepOrangeAccent
+                    color: Colors.blueAccent
                 )
             ),
             initialRoute: RouteName.splash,

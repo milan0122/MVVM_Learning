@@ -4,12 +4,23 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
 class Utils{
 
+  //calculating the average rating
+  static double averageRating(List<int> rating){
+    var avgRating = 0;
+    for(int i=0;i<rating.length; i++){
+      avgRating = avgRating + rating[i];
+
+    }
+    return double.parse((avgRating/rating.length).toStringAsFixed(1));
+  }
+
   //uses for Input Focus (eg. when you click done in one input field it goes to another one)
   static void FieldFocusChange(BuildContext context, FocusNode current, FocusNode next){
     current.unfocus();
     FocusScope.of(context).requestFocus(next);
 
 }
+
 //use for show error like internet connection
   static toastMessage(String message){
     Fluttertoast.showToast(

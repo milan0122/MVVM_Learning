@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:mvvm_learnig/model/user_token_model.dart';
 import 'package:mvvm_learnig/repository/auth_repository.dart';
+import 'package:mvvm_learnig/view_model/user_view_model.dart';
+import 'package:provider/provider.dart';
 
 import '../utility/routes/routes_name.dart';
 import '../utility/utils.dart';
@@ -21,6 +24,13 @@ class AuthViewModel with ChangeNotifier{
     setLoading(true);//until api hits
    _myRepo.loginApi(data).then((value){
      setLoading(false);//after api hits
+//saving the token
+    final usp = Provider.of<UserViewModel>(context,listen: false);
+    usp.saveUser(
+      UserTokenModel(
+        token: value['token'].toString()
+      )
+    );
 
      Utils.flushBarErrorMessage('Login Successfully', context);
      Navigator.pushNamed(context, RouteName.home);
@@ -34,7 +44,6 @@ class AuthViewModel with ChangeNotifier{
 
    }).onError((error,stackTrace){
      setLoading(false);//after api errors
-
      if(kDebugMode){
        Utils.toastMessage(error.toString());
        print(error.toString());

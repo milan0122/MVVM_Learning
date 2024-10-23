@@ -32,8 +32,16 @@
 - **Splash Screen**: Checks for a user token saved in Shared Preferences and redirects users accordingly.
   - Redirects to the home screen if the token exists.
   - Directs to the login screen if the token is null.
+- - **MoviesList Model**:
+- Developed a structured model to efficiently represent movie data.
 
+- **API Fetching**:
+  - Integrated a `getApi` function for seamless retrieval of movie data from an external source.
 
+- **Home Screen Design**:
+  - Built a Home Screen to display the fetched movie data using `HomeViewViewModel`, leveraging the Provider package for state management.
+
+  
 
 ## 📚 Getting Started
 
